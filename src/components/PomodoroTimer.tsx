@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { secondsToTime } from "../Utils/secondsToTime";
+import brain from "../assets/images/brain.svg";
 import { useInterval } from "../hooks/useInterval";
 import { Button } from "./Button";
 import { Timer } from "./Timer";
@@ -61,8 +62,8 @@ export function PomodoroTimer(props: Props): JSX.Element {
   );
 
   useEffect(() => {
-    if (working) document.body.classList.add("working");
-    if (resting) document.body.classList.remove("working");
+    if (working) document.body.classList.add("light-theme-red");
+    if (resting) document.body.classList.add("light-theme-green");
 
     if (mainTime > 0) return;
 
@@ -73,6 +74,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
       configureRest(true);
       setCyclesQtdManager(new Array(props.cycles - 1).fill(true));
       setCompletedCycles(completedCycles + 1);
+      document.body.classList.add("light-theme-blue");
     }
 
     if (working) setNumberOfPomodoros(numberOfPomodoros + 1);
@@ -100,7 +102,10 @@ export function PomodoroTimer(props: Props): JSX.Element {
 
   return (
     <div className="pomodoro">
-      <h2>You are: {working ? "Working" : "Resting"}</h2>
+      <section id="timer-status">
+        <img src={brain} alt="Brain Icon" />
+        <p>{working ? "Focus" : "Break"}</p>
+      </section>
       <Timer mainTime={mainTime} />
       <div className="controls">
         <Button text="Work" onClick={() => configureWork()} />
