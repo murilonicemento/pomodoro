@@ -1,0 +1,85 @@
+.light-theme-red {
+  --background-color: #fff2f2;
+  --background-timer-status: rgba(255, 76, 76, 0.15);
+  --font-color: #471515;
+  --play-button: rgba(255, 76, 76, 0.71);
+}
+
+.light-theme-green {
+  --background-color: #f2fff5;
+  --background-timer-status: rgba(77, 218, 110, 0.15);
+  --font-color: #14401d;
+  --play-button: rgba(77, 218, 110, 0.62);
+}
+
+.light-theme-blue {
+  --background-color: #f2f9ff;
+  --background-timer-status: rgba(76, 172, 255, 0.15);
+  --font-color: #153047;
+  --play-button: rgba(76, 172, 255, 0.62);
+}
+
+.dark-theme-red {
+  --background-color: #0d0404;
+  --background-timer-status: rgba(255, 76, 76, 0.15);
+  --font-color: #fff2f2;
+  --play-button: rgba(255, 76, 76, 0.71);
+}
+
+.dark-theme-green {
+  --background-color: #040d06;
+  --background-timer-status: rgba(77, 218, 110, 0.15);
+  --font-color: #f2fff5;
+  --play-button: rgba(77, 218, 110, 0.62);
+}
+
+.dark-theme-blue {
+  --background-color: #04090d;
+  --background-timer-status: rgba(76, 172, 255, 0.15);
+  --font-color: #f2f9ff;
+  --play-button: rgba(76, 172, 255, 0.62);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts//Roboto-Thin.ttf);
+}
+
+body {
+  height: 100vh;
+  background-color: #f2fff5;
+  font-family: "Roboto", monospace, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.light-theme-red {
+  background-color: #fff2f2;
+}
+
+.light-theme-green {
+  background-color: #f2fff5;
+}
+
+.light-theme-blue {
+  background-color: #f2f9ff;
+}
+
+.dark-theme-red {
+  background-color: #0d0404;
+}
+
+.dark-theme-green {
+  background-color: #040d06;
+}
+
+.dark-theme-blue {
+  background-color: #04090d;
+}
