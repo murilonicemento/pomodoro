@@ -58,28 +58,43 @@ body {
   font-family: "Roboto", monospace, sans-serif;
   display: grid;
   place-items: center;
+
+  p {
+    font-size: 16px;
+    font-weight: 800;
+  }
+}
+
+#timer-status {
+  border: 1px solid var(--font-color);
 }
 
 .light-theme-red {
   background-color: #fff2f2;
+  color: #471515;
 }
 
 .light-theme-green {
   background-color: #f2fff5;
+  color: #14401d;
 }
 
 .light-theme-blue {
   background-color: #f2f9ff;
+  color: #153047;
 }
 
 .dark-theme-red {
   background-color: #0d0404;
+  color: #fff2f2;
 }
 
 .dark-theme-green {
   background-color: #040d06;
+  color: #f2fff5;
 }
 
 .dark-theme-blue {
   background-color: #04090d;
+  color: #f2f9ff;
 }
