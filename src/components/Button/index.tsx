@@ -1,3 +1,4 @@
+import "./style.scss";
 interface Props {
   onClick?: () => void;
   text: string;

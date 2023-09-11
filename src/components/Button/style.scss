@@ -1,0 +1,15 @@
+button {
+  border: none;
+  &:nth-child(even) {
+    width: 128px;
+    height: 96px;
+    border-radius: 24px;
+    background-color: rgba(255, 76, 76, 0.71);
+  }
+
+  &:nth-child(odd) {
+    width: 80px;
+    height: 80px;
+    border-radius: 32px;
+  }
+}

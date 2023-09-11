@@ -9,4 +9,11 @@
     padding: 10px 16px;
     border-radius: 9999px;
   }
+
+  #controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
 }

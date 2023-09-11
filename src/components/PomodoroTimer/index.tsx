@@ -118,7 +118,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
         <p>{working ? "Focus" : "Break"}</p>
       </div>
       <Timer mainTime={mainTime} />
-      <div className="controls">
+      <div id="controls">
         <Button text="Work" onClick={() => configureWork()} />
         <Button text="Rest" onClick={() => configureRest(false)} />
         <Button
