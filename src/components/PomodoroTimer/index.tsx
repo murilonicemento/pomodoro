@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { secondsToTime } from "../../Utils/secondsToTime";
 import brain from "../../assets/images/brain.svg";
 import coffee from "../../assets/images/coffee.svg";
+import dots from "../../assets/images/dots-three-outline.svg";
+import fastForward from "../../assets/images/fast-forward.svg";
+import pause from "../../assets/images/pause.svg";
+import play from "../../assets/images/play.svg";
 import { useInterval } from "../../hooks/useInterval";
-import { Button } from "../Button";
 import { Timer } from "../Timer";
 import "./style.scss";
 
@@ -27,9 +29,6 @@ export function PomodoroTimer(props: Props): JSX.Element {
   const [cyclesQtdManager, setCyclesQtdManager] = useState(
     new Array(props.cycles - 1).fill(true)
   );
-  const [completedCycles, setCompletedCycles] = useState(0);
-  const [fullWorkingTime, setFullWorkingTime] = useState(0);
-  const [numberOfPomodoros, setNumberOfPomodoros] = useState(0);
 
   const configureWork = useCallback(() => {
     setTimeCounting(true);
@@ -81,11 +80,9 @@ export function PomodoroTimer(props: Props): JSX.Element {
     } else if (working && cyclesQtdManager.length <= 0) {
       configureRest(true);
       setCyclesQtdManager(new Array(props.cycles - 1).fill(true));
-      setCompletedCycles(completedCycles + 1);
       document.body.classList.add("light-theme-blue");
     }
 
-    if (working) setNumberOfPomodoros(numberOfPomodoros + 1);
     if (resting) configureWork();
   }, [
     working,
@@ -96,14 +93,11 @@ export function PomodoroTimer(props: Props): JSX.Element {
     cyclesQtdManager,
     setCyclesQtdManager,
     props.cycles,
-    completedCycles,
-    numberOfPomodoros,
   ]);
 
   useInterval(
     () => {
       setMainTime(mainTime - 1);
-      if (working) setFullWorkingTime(fullWorkingTime + 1);
     },
     timeCounting ? 1000 : null
   );
@@ -119,19 +113,21 @@ export function PomodoroTimer(props: Props): JSX.Element {
       </div>
       <Timer mainTime={mainTime} />
       <div id="controls">
-        <Button text="Work" onClick={() => configureWork()} />
-        <Button text="Rest" onClick={() => configureRest(false)} />
-        <Button
+        <button onClick={() => setTimeCounting(!timeCounting)}>
+          <img src={dots} alt="Dots three outline" />
+        </button>
+        <button onClick={() => configureWork()}>
+          <img
+            src={working ? pause : play}
+            alt={working ? "Pause Icon" : "Play Icon"}
+          />
+        </button>
+        <button
           className={!working && !resting ? "hidden" : ""}
-          text={timeCounting ? "Pause" : "Play"}
-          onClick={() => setTimeCounting(!timeCounting)}
-        />
-      </div>
-
-      <div className="details">
-        <p>Ciclos concluídos: {completedCycles} </p>
-        <p>Horas Trabalhadas: {secondsToTime(fullWorkingTime)} </p>
-        <p>Pomodoros concluídos: {numberOfPomodoros} </p>
+          onClick={() => configureRest(false)}
+        >
+          <img src={fastForward} alt="Fast Forward Icon" />
+        </button>
       </div>
     </section>
   );
