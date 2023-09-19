@@ -11,7 +11,7 @@ Este é um aplicativo de temporizador Pomodoro construído com React e TypeScrip
 
 ## Design
 
-<img src="./design/pomodoro.jpeg" alt="Design Pomodoro App" />
+<img src="./design/pomodoro-new-version.jpeg" alt="Design Pomodoro App" />
 
 ## Pré-requisitos
 
