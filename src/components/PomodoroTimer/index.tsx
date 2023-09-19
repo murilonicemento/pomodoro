@@ -114,13 +114,10 @@ export function PomodoroTimer(props: Props): JSX.Element {
       <Timer mainTime={mainTime} />
       <div id="controls">
         <button onClick={() => setTimeCounting(!timeCounting)}>
-          <img src={dots} alt="Dots three outline" />
+          <img src={pause} alt="Pause Icon" />
         </button>
         <button onClick={() => configureWork()}>
-          <img
-            src={working ? pause : play}
-            alt={working ? "Pause Icon" : "Play Icon"}
-          />
+          <img src={play} alt="Play Icon" />
         </button>
         <button
           className={!working && !resting ? "hidden" : ""}
