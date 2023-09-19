@@ -56,8 +56,13 @@ body {
   height: 100vh;
   background-color: #f2fff5;
   font-family: "Roboto", monospace, sans-serif;
+  font-weight: 800;
   display: grid;
   place-items: center;
+
+  .container {
+    margin: 15px auto;
+  }
 
   p {
     font-size: 16px;
