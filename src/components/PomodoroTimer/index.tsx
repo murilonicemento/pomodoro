@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import brain from "../../assets/images/brain.svg";
 import coffee from "../../assets/images/coffee.svg";
-import dots from "../../assets/images/dots-three-outline.svg";
 import fastForward from "../../assets/images/fast-forward.svg";
 import pause from "../../assets/images/pause.svg";
 import play from "../../assets/images/play.svg";
