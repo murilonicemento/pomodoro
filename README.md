@@ -1,4 +1,4 @@
-# React Card Form
+# Pomodoro App
 
 Este é um aplicativo de temporizador Pomodoro construído com React e TypeScript. O Pomodoro é uma técnica de gerenciamento de tempo que ajuda você a aumentar a produtividade dividindo o trabalho em intervalos de foco e descanso.
 
